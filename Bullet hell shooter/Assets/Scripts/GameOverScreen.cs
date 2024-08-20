@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Importante para reiniciar la escena
+
 
 public class GameOverScreen : MonoBehaviour
 {
-    public Text resultText; // Texto que mostrará el contador de daño
+    public Text resultText;
 
-    // Referencias a los scripts de salud del jugador y del jefe
+
     public Health playerHealth;
     public Health bossHealth;
 
@@ -24,7 +24,7 @@ public class GameOverScreen : MonoBehaviour
             resultText.text = "you won!";
         }
 
-        Time.timeScale = 0f; // Detener el tiempo del juego
+        Time.timeScale = 0f;
     }
 
 }

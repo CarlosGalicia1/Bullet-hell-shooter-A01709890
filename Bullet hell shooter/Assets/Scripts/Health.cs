@@ -10,7 +10,6 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Método para recibir daño
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -20,10 +19,8 @@ public class Health : MonoBehaviour
         }
     }
 
-    // Método para morir
     void Die()
     {
-        // Aquí puedes agregar efectos de muerte, animaciones, etc.
         Destroy(gameObject);
     }
 }

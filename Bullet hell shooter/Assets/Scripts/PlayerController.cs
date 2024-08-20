@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
     public float slowSpeed = 10f;
     public GameObject projectilePrefab;
     public float fireRate = 0.1f;
-    private float nextFireTime = 0f; // Tiempo para el siguiente disparo
+    private float nextFireTime = 0f;
 
 
     // Update is called once per frame
     void Update()
     {
-        // Constraint player's z movement
+
         if (transform.position.z < -zRange)
         {
             transform.position = new Vector3(transform.position.x , transform.position.y, -zRange);
@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
         }
 
-        // Constraint player's x movement
         if (transform.position.x < lowerBound)
         {
             transform.position = new Vector3(lowerBound, transform.position.y, transform.position.z);
@@ -52,7 +51,6 @@ public class PlayerController : MonoBehaviour
         {
             nextFireTime = Time.time + fireRate;
 
-            //Launch projectile from the player
             Instantiate(projectilePrefab, transform.position + new Vector3(-2.5f,1f,0f), projectilePrefab.transform.rotation);
             BulletCounter bulletCounter = FindObjectOfType<BulletCounter>();
             bulletCounter.IncrementBulletCount();

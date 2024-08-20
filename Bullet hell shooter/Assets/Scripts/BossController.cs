@@ -11,7 +11,7 @@ public class BossController : MonoBehaviour
     private int currentPattern = 0;
     private float nextFireTime = 0f;
     private float spiralAngle = 0f;
-    public float spawnRadius = 2.0f; // Radio de separación
+    public float spawnRadius = 2.0f;
 
     void Start()
     {
@@ -52,11 +52,11 @@ public class BossController : MonoBehaviour
         }
     }
 
-    // Espiral
+    // Espirales alargadas
     void FireSpiralPattern()
     {
         int bulletsPerWave = 1;
-        spiralAngle += 10f; // Ajustar el ángulo de rotación en cada disparo
+        spiralAngle += 10f;
         if (spiralAngle >= 360f) spiralAngle -= 360f;
 
         for (int i = 0; i < bulletsPerWave; i++)
@@ -101,7 +101,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-    // Ráfagas radiales
+    // Ráfagas radiales en circulo
     void FireRadialBurstPattern()
     {
         int bulletsPerBurst = 30;
