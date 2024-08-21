@@ -4,17 +4,11 @@ using TMPro;
 public class BulletCounter : MonoBehaviour
 {
     public TextMeshProUGUI bulletCountText;
-    private int bulletCount = 0;
 
-    public void IncrementBulletCount()
+    void Update()
     {
-        bulletCount++;
-        UpdateBulletCountText();
-    }
 
-
-    private void UpdateBulletCountText()
-    {
-        bulletCountText.text = "Balas disparadas: \n " + bulletCount.ToString();
+        int bulletCount = GameObject.FindGameObjectsWithTag("Bullet").Length + GameObject.FindGameObjectsWithTag("BulletBeam").Length;
+        bulletCountText.text = "Balas en pantalla: \n " + bulletCount;
     }
 }

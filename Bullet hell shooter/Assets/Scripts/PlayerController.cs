@@ -52,8 +52,6 @@ public class PlayerController : MonoBehaviour
             nextFireTime = Time.time + fireRate;
 
             Instantiate(projectilePrefab, transform.position + new Vector3(-2.5f,1f,0f), projectilePrefab.transform.rotation);
-            BulletCounter bulletCounter = FindObjectOfType<BulletCounter>();
-            bulletCounter.IncrementBulletCount();
         }
     }
 }

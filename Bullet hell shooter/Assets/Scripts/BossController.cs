@@ -52,11 +52,11 @@ public class BossController : MonoBehaviour
         }
     }
 
-    // Espirales alargadas
+    // Espiral
     void FireSpiralPattern()
     {
         int bulletsPerWave = 1;
-        spiralAngle += 10f;
+        spiralAngle += 10f; 
         if (spiralAngle >= 360f) spiralAngle -= 360f;
 
         for (int i = 0; i < bulletsPerWave; i++)
@@ -101,7 +101,7 @@ public class BossController : MonoBehaviour
         }
     }
 
-    // Ráfagas radiales en circulo
+    // Rafagas radiales
     void FireRadialBurstPattern()
     {
         int bulletsPerBurst = 30;
@@ -111,7 +111,7 @@ public class BossController : MonoBehaviour
         {
             float angle = i * angleStep;
             Vector3 bulletDir = new Vector3(
-                Mathf.Sin(angle * Mathf.Deg2Rad),0f,Mathf.Cos(angle * Mathf.Deg2Rad)).normalized;
+                Mathf.Sin(angle * Mathf.Deg2Rad), 0f, Mathf.Cos(angle * Mathf.Deg2Rad)).normalized;
 
             GameObject bullet = Instantiate(bulletPrefab, transform.position + new Vector3(0f, 1f, 0f), Quaternion.identity);
             Physics.IgnoreCollision(bullet.GetComponent<Collider>(), GetComponent<Collider>());
